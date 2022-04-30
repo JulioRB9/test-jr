@@ -1,0 +1,24 @@
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 55%);
+    --first-color: hsl(31, 100%, 70%);
+    --body-color: hsl(0, 0%, 99%);
+    --container-color: #fff;
+    --border-color: hsl(0, 0%, 94%);
+
+    /*========== Font and typography ==========*/
+    --fuentePrincipal: "Raleway", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+

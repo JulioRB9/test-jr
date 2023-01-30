@@ -8,14 +8,29 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
 }
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
 
-.titulo {
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
     text-align: center;
 }
 
@@ -27,14 +42,99 @@ body {
     background-color: var(--secundario);
 }
 .contenedor{
-    width: 120rem;
+    max-width:120rem;
     margin: 0 auto;
 }
-.navegacion-principal {
+
+/* Diseño de boton */
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding:  1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
 }
 
-.navegacion-principal a {
-    background-color: var(--primario);
-    display:inline;
+@media ( min-width: 768px ) {
+    .boton{
+        width: auto;
+    }
+    
+}
 
+.navegacion-principal { 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/*Para configurar Media query 
+Prediona keyboard
+01 - CTRL+ SHIFT + P
+02 - Buscar CSS
+03 - Editar json
+04 - Para automatizar
+
+Ejemplo:
+"Crea una media Queri":{
+		"prefix": "mq",
+		"body": "@media ( min-width: $1 ){\n    $2\n}"
+	}
+
+*/
+@media ( min-width: 768px ) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-around;
+        
+    }
+    
+}
+.navegacion-principal a {
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--negro);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    /* padding: 20px; */
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0,0,0, .7);
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contenido-hero h2, 
+.contenido-hero p {
+    color: var(--blanco);
+}
+.ubicacion {
+    display: flex;
+    align-items: flex-end;
 }

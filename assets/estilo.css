@@ -4,6 +4,7 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #949794;
 }
 
 html {
@@ -11,17 +12,23 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
+    /*Degradado*/
 }
+
 h1 {
     font-size: 3.8rem;
 }
+
 h2 {
     font-size: 2.8rem;
 }
@@ -30,7 +37,9 @@ h3 {
     font-size: 1.8rem;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
@@ -41,16 +50,26 @@ h1,h2,h3 {
 .nav-bg {
     background-color: var(--secundario);
 }
-.contenedor{
-    max-width:120rem;
+
+.contenedor {
+    max-width: 120rem;
     margin: 0 auto;
 }
 
+.sombra {
+    -webkit-box-shadow: -4px 2px 28px 4px rgba(145, 145, 145, 1);
+    -moz-box-shadow: -4px 2px 28px 4px rgba(145, 145, 145, 1);
+    box-shadow: -4px 2px 28px 4px rgba(145, 145, 145, 1);
+    border-radius: 2%;
+    background-color: var(--blanco);
+    padding: 2rem;
+}
+
 /* Diseño de boton */
-.boton{
+.boton {
     background-color: var(--secundario);
     color: var(--blanco);
-    padding:  1rem 3rem;
+    padding: 1rem 3rem;
     margin-top: 1rem;
     font-size: 2rem;
     text-decoration: none;
@@ -61,14 +80,14 @@ h1,h2,h3 {
     text-align: center;
 }
 
-@media ( min-width: 768px ) {
-    .boton{
+@media (min-width: 768px) {
+    .boton {
         width: auto;
     }
-    
+
 }
 
-.navegacion-principal { 
+.navegacion-principal {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -88,14 +107,15 @@ Ejemplo:
 	}
 
 */
-@media ( min-width: 768px ) {
-    .navegacion-principal{
+@media (min-width: 768px) {
+    .navegacion-principal {
         flex-direction: row;
         justify-content: space-around;
-        
+
     }
-    
+
 }
+
 .navegacion-principal a {
     padding: 1rem;
     color: var(--blanco);
@@ -103,7 +123,8 @@ Ejemplo:
     font-size: 2rem;
     font-weight: 700;
 }
-.navegacion-principal a:hover{
+
+.navegacion-principal a:hover {
     background-color: var(--primario);
     color: var(--negro);
 }
@@ -115,14 +136,15 @@ Ejemplo:
     height: 450px;
     /* padding: 20px; */
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .contenido-hero {
     position: absolute;
-    background-color: rgba(0,0,0, .7);
+    background-color: rgba(0, 0, 0, .7);
     width: 100%;
     height: 100%;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,11 +152,48 @@ Ejemplo:
 
 }
 
-.contenido-hero h2, 
+.contenido-hero h2,
 .contenido-hero p {
     color: var(--blanco);
 }
+
 .ubicacion {
     display: flex;
     align-items: flex-end;
+}
+
+@media ( min-width: 768px ) {
+    .servicios {
+        display: grid;
+        /* grid-template-columns: 33.3% 33.3% 33.3%; */
+        
+        /* Forma sencilla */
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{ 
+ color: var(--secundario);
+ font-weight: 400;
+}
+.servicio p {
+    line-height: 2;
+}
+
+.servicio .iconos {
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

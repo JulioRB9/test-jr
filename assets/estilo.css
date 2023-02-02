@@ -10,6 +10,7 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y mandatory;
 }
 
 *,
@@ -183,6 +184,13 @@ Ejemplo:
 .ubicacion {
     display: flex;
     align-items: flex-end;
+}
+/* Scroll snap */
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 @media (min-width: 768px) {
